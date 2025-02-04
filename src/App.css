@@ -1,0 +1,166 @@
+.app-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #5932ea;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+.btn-group button {
+  background-color: #5932ea;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  margin: 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group button:hover {
+  background-color: #4426b3;
+  transform: scale(1.05);
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.dropzone {
+  min-height: 200px;
+  border: 2px dotted #5932ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+  border-radius: 10px;
+  transition: all 0.4s ease; /* Smooth transition */
+}
+
+.dropzone:hover {
+  background-color: #edeaff;
+  border-color: #4426b3;
+}
+
+/* File List Wrapper */
+.file-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 300px; /* Add max-height */
+  overflow-y: auto; /* Enable scrolling if needed */
+  transition: all 0.4s ease; /* Smooth transitions */
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s ease; /* Smooth delete effect */
+  position: relative;
+  opacity: 1;
+}
+
+/* Fade-out effect when deleting */
+.file-item.removing {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.file-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.file-item span {
+  font-weight: 500;
+  color: #333;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4d;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.delete-btn:hover {
+  background-color: #ffe6e6;
+  transform: scale(1.2);
+  color: #ff1a1a;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.delete-btn:active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .file-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .delete-btn {
+    font-size: 16px;
+    padding: 6px;
+  }
+}
